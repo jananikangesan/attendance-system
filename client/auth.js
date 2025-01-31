@@ -2,6 +2,13 @@ console.log("auth.js script loaded");
 
 const API_URL = "http://localhost:8082/user/login"; 
 
+document.addEventListener("DOMContentLoaded", () => {
+    if (window.location.pathname.includes("home.html") && !localStorage.getItem("token")) {
+        window.location.href = "login.html"; 
+    }
+   
+});
+
 document.getElementById("loginForm")?.addEventListener("submit", async function(event) {
     event.preventDefault(); 
 
