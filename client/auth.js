@@ -42,3 +42,8 @@ document.getElementById("loginForm")?.addEventListener("submit", async function(
         document.getElementById("error-message").style.display = "block";
     }
 });
+
+function logout() {
+    localStorage.removeItem("token");
+    window.location.href = "login.html";
+}
