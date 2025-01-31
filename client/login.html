@@ -6,12 +6,15 @@
     <title>login</title>
     <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-
+   
 </head>
 <body class="d-flex justify-content-center align-items-center vh-100 bg-light">
 
     <div class="card shadow p-4" style="width: 350px;">
         <h3 class="text-center mb-4">Login</h3>
+
+        <div class="text-danger mt-2 text-center" id="error-message" style="display: none;">username or password wrong</div >
+
         <form id="loginForm">
             <div class="mb-3">
                 <label for="username" class="form-label">Username</label>
@@ -23,8 +26,10 @@
             </div>
             <button type="submit" class="btn btn-primary w-100">Login</button>
         </form>
-        <p class="text-danger mt-2 text-center" id="error-message" style="display: none;">Invalid credentials</p>
+       
     </div>
+
+    <script src="auth.js"></script>
     
 </body>
 </html>
