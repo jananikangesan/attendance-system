@@ -30,7 +30,7 @@ public class LoginController {
             String token = jwtService.generateToken(username);
             return Map.of("token", token);
         } else {
-            throw new RuntimeException("Invalid Credentials");
+            return Map.of("message", "Invalid Credentials");
         }
     }
 }
