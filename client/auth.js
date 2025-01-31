@@ -29,7 +29,13 @@ document.getElementById("loginForm")?.addEventListener("submit", async function(
         const data = await response.json();  
         console.log("Response data:", data);
 
-       
+        if (data && data.token) {
+            localStorage.setItem("token", data.token); 
+            window.location.href = "home.html"; 
+
+        } else {
+            throw new Error("Token not found in response");
+        }  
        
     } catch (error) {
         console.error("Login error:", error);
