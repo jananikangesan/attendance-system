@@ -18,14 +18,14 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf(AbstractHttpConfigurer::disable) // Disable CSRF for simplicity (enable in production if needed)
-                .cors(withDefaults()) // Allow cross-origin requests
+        http.csrf(AbstractHttpConfigurer::disable) 
+                .cors(withDefaults())
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/user/login").permitAll() // Allow signup and login without authentication
-                        .anyRequest().authenticated() // All other requests require authentication
+                        .requestMatchers("/user/login").permitAll()
+                        .anyRequest().authenticated()
                 )
                 .sessionManagement(session -> session
-                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS)); // Use stateless session (JWT)
+                        .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
         return http.build();
     }
