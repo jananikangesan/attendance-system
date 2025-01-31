@@ -6,7 +6,10 @@ document.addEventListener("DOMContentLoaded", () => {
     if (window.location.pathname.includes("home.html") && !localStorage.getItem("token")) {
         window.location.href = "login.html"; 
     }
-   
+
+    if (window.location.pathname.includes("login.html") && localStorage.getItem("token")) {
+        window.location.href = "home.html"; 
+    } 
 });
 
 document.getElementById("loginForm")?.addEventListener("submit", async function(event) {
